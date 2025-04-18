@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CropItem" load_steps=3 format=3 uid="uid://bvu74qpf4eiwb"]
+
+[ext_resource type="PackedScene" uid="uid://325hulsttic" path="res://Entities/Crops/Models/tomato.glb" id="1_ftsdh"]
+[ext_resource type="Script" uid="uid://041rreevr2db" path="res://Entities/Crops/Data/CropItem.gd" id="1_rxvst"]
+
+[resource]
+script = ExtResource("1_rxvst")
+name = "Tomato"
+scene = ExtResource("1_ftsdh")
+growth_time = 6.0
+metadata/_custom_type_script = "uid://041rreevr2db"
