@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://demcs2k6gqw07"]
+[gd_scene load_steps=9 format=3 uid="uid://demcs2k6gqw07"]
 
 [ext_resource type="PackedScene" uid="uid://tr8glbjeeipc" path="res://Entities/Garden/Plot/Models/dirt_patch.glb" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://dd3wvbme1u141" path="res://Entities/Garden/Plot/plot.gd" id="2_tlwt5"]
 [ext_resource type="Resource" uid="uid://trjacfyvfkw6" path="res://Entities/Crops/Data/carrot.tres" id="3_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://vnp750s0wgdj" path="res://Entities/Garden/Plot/Models/ground.glb" id="5_036b0"]
 [ext_resource type="Resource" uid="uid://bvu74qpf4eiwb" path="res://Entities/Crops/Data/tomato.tres" id="5_dwbse"]
+[ext_resource type="Resource" uid="uid://c2yvmgxd8htpf" path="res://Entities/Crops/Data/eggplant.tres" id="6_dwbse"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gv5m4"]
 points = PackedVector3Array(-64, 0, -64, -64, 0, 64, 64, 0, -64, 64, 0, 64)
@@ -44,4 +45,10 @@ environment = SubResource("Environment_f3sb7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.325, 0)
 script = ExtResource("2_tlwt5")
 cropToPlant = ExtResource("5_dwbse")
+margin = 0.15
+
+[node name="dirt_patch3" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.325, 0)
+script = ExtResource("2_tlwt5")
+cropToPlant = ExtResource("6_dwbse")
 margin = 0.15
