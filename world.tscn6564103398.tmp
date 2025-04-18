@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://demcs2k6gqw07"]
+
+[ext_resource type="PackedScene" uid="uid://tr8glbjeeipc" path="res://Entities/Garden/Plot/Models/dirt_patch.glb" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://dd3wvbme1u141" path="res://Entities/Garden/Plot/plot.gd" id="2_tlwt5"]
+[ext_resource type="Resource" uid="uid://trjacfyvfkw6" path="res://Entities/Crops/Data/carrot.tres" id="3_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://vnp750s0wgdj" path="res://Entities/Garden/Plot/Models/ground.glb" id="5_036b0"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gv5m4"]
+points = PackedVector3Array(-64, 0, -64, -64, 0, 64, 64, 0, -64, 64, 0, 64)
+
+[sub_resource type="Environment" id="Environment_f3sb7"]
+
+[node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.00174521, 0.748955, -0.662619, 0, 0.66262, 0.748956, 0.999998, 0.00130709, -0.00115641, 0, 0, 0)
+light_color = Color(0.990973, 0.902145, 0.847187, 1)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.547446, 0.836841, 0, -0.836841, 0.547446, 0, 3.29948, 1.96574)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0801697, 0.403351)
+shape = SubResource("ConvexPolygonShape3D_gv5m4")
+debug_fill = false
+
+[node name="dirt_patch" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.325, 0)
+script = ExtResource("2_tlwt5")
+crop = ExtResource("3_aqk2v")
+margin = 0.15
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f3sb7")
+
+[node name="ground" parent="." instance=ExtResource("5_036b0")]
