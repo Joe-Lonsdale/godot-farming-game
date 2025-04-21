@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="InteractionTypePress" load_steps=2 format=3 uid="uid://d4fa8ij8ur5k8"]
+
+[ext_resource type="Script" uid="uid://bgiwlyuiaqgcg" path="res://General/Data/interaction_type_press.gd" id="1_g1uuv"]
+
+[resource]
+script = ExtResource("1_g1uuv")
+metadata/_custom_type_script = "uid://bgiwlyuiaqgcg"

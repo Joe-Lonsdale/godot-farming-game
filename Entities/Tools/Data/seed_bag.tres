@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ToolItem" load_steps=3 format=3 uid="uid://d0ebwsc2bkgt6"]
+
+[ext_resource type="Script" uid="uid://c155824pr6155" path="res://Entities/Tools/Data/ToolItem.gd" id="1_f3klv"]
+[ext_resource type="PackedScene" uid="uid://cr3p5gibveftk" path="res://Entities/Tools/Models/seed_bag.glb" id="1_yhlje"]
+
+[resource]
+script = ExtResource("1_f3klv")
+name = "Seed Bag"
+scene = ExtResource("1_yhlje")
+metadata/_custom_type_script = "uid://c155824pr6155"

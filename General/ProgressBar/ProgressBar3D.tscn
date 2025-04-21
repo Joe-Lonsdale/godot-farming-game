@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://kt18fgf48jer"]
+
+[ext_resource type="PackedScene" uid="uid://3yw0y3bqg0cp" path="res://General/ProgressBar/ProgressBar.tscn" id="1_4c2so"]
+[ext_resource type="Script" uid="uid://dfcnhdg3rklq4" path="res://General/ProgressBar/progress_bar_3d.gd" id="1_v2yrp"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6rwko"]
+viewport_path = NodePath("SubViewport")
+
+[node name="ProgressBar3D" type="Node3D"]
+script = ExtResource("1_v2yrp")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+msaa_2d = 3
+msaa_3d = 3
+screen_space_aa = 1
+use_taa = true
+use_debanding = true
+use_occlusion_culling = true
+size = Vector2i(150, 18)
+
+[node name="ProgressBar" parent="SubViewport" instance=ExtResource("1_4c2so")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337562, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_6rwko")

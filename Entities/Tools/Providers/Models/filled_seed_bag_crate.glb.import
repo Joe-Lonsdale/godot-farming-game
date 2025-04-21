@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://gudsla0l2ffo"
-path="res://.godot/imported/dirt_patch.glb-ac57faa6bb4a0a4459c2185e9954fec2.scn"
+uid="uid://dniq23kw0dvpi"
+path="res://.godot/imported/filled_seed_bag_crate.glb-be78e45e0ceaebce8ec83dadebba00eb.scn"
 
 [deps]
 
-source_file="res://Entities/Garden/Plot/Models/dirt_patch.glb"
-dest_files=["res://.godot/imported/dirt_patch.glb-ac57faa6bb4a0a4459c2185e9954fec2.scn"]
+source_file="res://Entities/Tools/Providers/Models/filled_seed_bag_crate.glb"
+dest_files=["res://.godot/imported/filled_seed_bag_crate.glb-be78e45e0ceaebce8ec83dadebba00eb.scn"]
 
 [params]
 
@@ -31,7 +31,7 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path="uid://dy3wofns55xqs"
+import_script/path=""
 _subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

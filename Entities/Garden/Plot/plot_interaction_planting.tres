@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="InteractionTypeHold" load_steps=2 format=3 uid="uid://03mvnxdfrnl1"]
+
+[ext_resource type="Script" uid="uid://pno6llb2vc31" path="res://General/Data/interaction_type_hold.gd" id="1_c6nwc"]
+
+[resource]
+script = ExtResource("1_c6nwc")
+hold_time = 1.0
+metadata/_custom_type_script = "uid://pno6llb2vc31"

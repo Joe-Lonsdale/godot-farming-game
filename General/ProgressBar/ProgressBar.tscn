@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://3yw0y3bqg0cp"]
+
+[ext_resource type="StyleBox" uid="uid://clgc1t021jc7h" path="res://General/ProgressBar/ProgressBarFillStylebox.tres" id="1_1oa73"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rwko"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="ProgressBar" type="ProgressBar"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -8.5
+offset_right = 75.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_6rwko")
+theme_override_styles/fill = ExtResource("1_1oa73")
+max_value = 1.0
+allow_greater = true
+allow_lesser = true
+show_percentage = false
+metadata/_edit_horizontal_guides_ = [125.0, 18.0, 19.0, 18.0, -8.0, 9.0]
+metadata/_edit_vertical_guides_ = [77.0, 100.0, 150.0, -13.0, 75.0]

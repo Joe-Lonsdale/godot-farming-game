@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CropItem" load_steps=4 format=3 uid="uid://c2yvmgxd8htpf"]
+
+[ext_resource type="Script" uid="uid://041rreevr2db" path="res://Entities/Sellables/Crops/Data/CropItem.gd" id="1_6mcmc"]
+[ext_resource type="PackedScene" uid="uid://bs063uvoaaoi2" path="res://Entities/Sellables/Crops/Scenes/eggplant.tscn" id="1_cyt5i"]
+[ext_resource type="PackedScene" uid="uid://cdq4wjslpvgcd" path="res://Entities/Tools/Models/seed_bag.tscn" id="3_c3ywe"]
+
+[resource]
+script = ExtResource("1_6mcmc")
+name = "Eggplant"
+scene = ExtResource("1_cyt5i")
+growth_time = 15.0
+plant_time = 2.0
+seed_bag_color = Color(0.65052, 0.258756, 1, 1)
+seed_bag_model = ExtResource("3_c3ywe")
+sell_price = 4
+metadata/_custom_type_script = "uid://041rreevr2db"

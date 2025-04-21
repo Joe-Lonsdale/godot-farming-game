@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ToolStorageItem" load_steps=2 format=3 uid="uid://de3ce381n6e23"]
+
+[ext_resource type="Script" uid="uid://cbgwcl744xv1f" path="res://Entities/Tools/Storage/Data/ToolStorageItem.gd" id="1_764dc"]
+
+[resource]
+script = ExtResource("1_764dc")
+storage_size = 0
+name = ""
+metadata/_custom_type_script = "uid://cbgwcl744xv1f"

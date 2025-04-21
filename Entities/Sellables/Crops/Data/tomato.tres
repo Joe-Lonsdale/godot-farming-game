@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CropItem" load_steps=4 format=3 uid="uid://bvu74qpf4eiwb"]
+
+[ext_resource type="PackedScene" uid="uid://cajicwng7k08u" path="res://Entities/Sellables/Crops/Scenes/tomato.tscn" id="1_2waoo"]
+[ext_resource type="Script" uid="uid://041rreevr2db" path="res://Entities/Sellables/Crops/Data/CropItem.gd" id="1_rxvst"]
+[ext_resource type="PackedScene" uid="uid://cdq4wjslpvgcd" path="res://Entities/Tools/Models/seed_bag.tscn" id="3_rslpf"]
+
+[resource]
+script = ExtResource("1_rxvst")
+name = "Tomato"
+scene = ExtResource("1_2waoo")
+growth_time = 6.0
+plant_time = 0.5
+seed_bag_color = Color(0.899966, 0.0847855, 0.087108, 1)
+seed_bag_model = ExtResource("3_rslpf")
+sell_price = 1
+metadata/_custom_type_script = "uid://041rreevr2db"

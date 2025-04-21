@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://c56enw7jxn62v"]
+
+[ext_resource type="Script" uid="uid://h3l3b50n7xdv" path="res://Entities/Player/player.gd" id="1_mv1ah"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ix6vc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ix6vc"]
+albedo_color = Color(0.486275, 0.235294, 0.65098, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ix6vc"]
+material = SubResource("StandardMaterial3D_ix6vc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mv1ah"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3uyv8"]
+material = SubResource("StandardMaterial3D_mv1ah")
+radius = 0.125
+height = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lu8i8"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tekja"]
+material = SubResource("StandardMaterial3D_lu8i8")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mv1ah"]
+size = Vector3(0.40387, 0.772064, 0.515549)
+
+[sub_resource type="Theme" id="Theme_mv1ah"]
+default_font_size = 36
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_mv1ah")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00346744, 1, 0.00118732)
+shape = SubResource("CapsuleShape3D_ix6vc")
+debug_fill = false
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Body" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_ix6vc")
+skeleton = NodePath("")
+
+[node name="EyeballRight" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.220727, 1.76841, 0.326694)
+mesh = SubResource("SphereMesh_3uyv8")
+skeleton = NodePath("../..")
+
+[node name="EyeballLeft" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.764, 0.325)
+mesh = SubResource("SphereMesh_3uyv8")
+skeleton = NodePath("../..")
+
+[node name="PupilLeft" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.205617, 1.77272, 0.408833)
+mesh = SubResource("SphereMesh_tekja")
+skeleton = NodePath("../..")
+
+[node name="PupilRight" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.211614, 1.77272, 0.409737)
+mesh = SubResource("SphereMesh_tekja")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Pivot"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00766915, 0.311317, 0.90025)
+shape = SubResource("BoxShape3D_mv1ah")
+
+[node name="MoneyDisplay" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -186.0
+offset_top = 1.0
+offset_right = -10.0
+offset_bottom = 72.0
+grow_horizontal = 0
+theme = SubResource("Theme_mv1ah")
+text = "$0"
+horizontal_alignment = 2

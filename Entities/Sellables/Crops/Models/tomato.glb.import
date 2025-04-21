@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://gudsla0l2ffo"
-path="res://.godot/imported/dirt_patch.glb-ac57faa6bb4a0a4459c2185e9954fec2.scn"
+uid="uid://325hulsttic"
+path="res://.godot/imported/tomato.glb-485053a01ab2751e72b9bb466b0ac493.scn"
 
 [deps]
 
-source_file="res://Entities/Garden/Plot/Models/dirt_patch.glb"
-dest_files=["res://.godot/imported/dirt_patch.glb-ac57faa6bb4a0a4459c2185e9954fec2.scn"]
+source_file="res://Entities/Sellables/Crops/Models/tomato.glb"
+dest_files=["res://.godot/imported/tomato.glb-485053a01ab2751e72b9bb466b0ac493.scn"]
 
 [params]
 
-nodes/root_type="StaticBody3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -31,7 +31,7 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path="uid://dy3wofns55xqs"
+import_script/path=""
 _subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

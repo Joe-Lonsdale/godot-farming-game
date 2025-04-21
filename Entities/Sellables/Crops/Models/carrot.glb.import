@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://gudsla0l2ffo"
-path="res://.godot/imported/dirt_patch.glb-ac57faa6bb4a0a4459c2185e9954fec2.scn"
+uid="uid://cwpbh8jhhudu4"
+path="res://.godot/imported/carrot.glb-fe6c21dd0ce82b3c7aac8d1b0df7300b.scn"
 
 [deps]
 
-source_file="res://Entities/Garden/Plot/Models/dirt_patch.glb"
-dest_files=["res://.godot/imported/dirt_patch.glb-ac57faa6bb4a0a4459c2185e9954fec2.scn"]
+source_file="res://Entities/Sellables/Crops/Models/carrot.glb"
+dest_files=["res://.godot/imported/carrot.glb-fe6c21dd0ce82b3c7aac8d1b0df7300b.scn"]
 
 [params]
 
-nodes/root_type="StaticBody3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -31,7 +31,14 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path="uid://dy3wofns55xqs"
-_subresources={}
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Cube_008": {
+"physics/body_type": 1,
+"physics/shape_type": 2
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

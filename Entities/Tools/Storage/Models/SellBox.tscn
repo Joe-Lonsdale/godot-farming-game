@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba0wkke8d4078"]
+
+[ext_resource type="PackedScene" uid="uid://bsfgca21yjfk1" path="res://Entities/Tools/Storage/Models/generic_box.glb" id="1_064ae"]
+[ext_resource type="Script" uid="uid://b0j2gankue35d" path="res://Entities/Tools/Storage/Scripts/sell_box.gd" id="2_5tob6"]
+[ext_resource type="Resource" uid="uid://de3ce381n6e23" path="res://Entities/Tools/Storage/Data/sale_box.tres" id="3_o6383"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5tob6"]
+points = PackedVector3Array(0.789968, 0.808603, 0.82233, -0.825335, 0.50983, -1.01388, -0.789186, -0.0417172, -0.787076, -1.01618, 0.50983, 0.828335, 0.793424, -0.0435847, 0.795533, 1.01688, 0.50983, -0.823234, -0.790129, 0.83971, -0.78802, 0.79753, -0.0458745, -0.79453, -0.784827, -0.0392857, 0.787827, 0.793144, 0.840895, -0.790144, -0.791392, 0.840415, 0.794393, 0.826234, 0.50983, 1.01918, -0.825335, 0.50983, 1.01918, 1.01688, 0.50983, 0.828335, 0.826234, 0.50983, -1.01388, -1.01618, 0.50983, -0.823234, 0.790203, 0.839255, 0.792312, -0.794417, 0.811375, -0.822766, -0.848359, 0.777625, -0.118513, 0.821253, 0.80912, 0.793072, 0.793481, 0.810427, -0.820868, -0.823085, 0.810385, -0.790401, -0.821434, 0.80956, 0.79392, -0.728494, 0.808666, 0.822457, 0.819374, 0.80818, -0.786153, -0.848425, 0.777655, 0.0630462)
+
+[node name="sell_box" instance=ExtResource("1_064ae")]
+script = ExtResource("2_5tob6")
+storage_item = ExtResource("3_o6383")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_5tob6")
