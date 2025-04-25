@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ba0aie08b3wns"
-path="res://.godot/imported/trowel.glb-6368fbf9acee0be702150386204d23e5.scn"
+uid="uid://bcxav6xfinwgn"
+path="res://.godot/imported/watering_can.glb-f01d9bb913a77305f25bd26590592bfa.scn"
 
 [deps]
 
-source_file="res://Entities/Tools/Models/trowel.glb"
-dest_files=["res://.godot/imported/trowel.glb-6368fbf9acee0be702150386204d23e5.scn"]
+source_file="res://Entities/Tools/Models/watering_can.glb"
+dest_files=["res://.godot/imported/watering_can.glb-f01d9bb913a77305f25bd26590592bfa.scn"]
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="StaticBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

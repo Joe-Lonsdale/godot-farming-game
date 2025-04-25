@@ -12,23 +12,22 @@ func _ready() -> void:
 				my_seed_bag_colour_material.albedo_color = crop.seed_bag_color
 				c.set_surface_override_material(0, my_seed_bag_colour_material)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-
-			
 	pass
 
-func get_interaction_type():
-	return seed_bag_crate_data.InteractionType
-
-func interact(player: Player):
-	var player_pick_up_response = player.pick_up(crop.seed_bag_model)
-	if player_pick_up_response[1]:
-		var seed_bag_node: SeedBag = player_pick_up_response[0]
+func on_pick_up(player: Player, pick_up_response: Variant):
+	if pick_up_response[1]:
+		var seed_bag_node: SeedBag = pick_up_response[0]
 		if seed_bag_node:
 			seed_bag_node.set("crop", crop)
 			seed_bag_node.set_seed_bag_color()
-	else:
-		if player_pick_up_response[0].get("crop") == crop:
-			player.put_down()
-		
+
+func get_item_to_pick_up(player: Player):
+	return crop.seed_bag_model
+
+func put_down_on(body: Node3D, player: Player) -> bool:
+	if body is SeedBag:
+		var bag_to_put_down: SeedBag = body
+		if bag_to_put_down.crop == crop:
+			return true
+	return false

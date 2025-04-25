@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c56enw7jxn62v"]
 
-[ext_resource type="Script" uid="uid://h3l3b50n7xdv" path="res://Entities/Player/player.gd" id="1_mv1ah"]
+[ext_resource type="Script" uid="uid://h3l3b50n7xdv" path="res://Entities/Interactors/Player/Scripts/player.gd" id="1_mv1ah"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ix6vc"]
 
@@ -26,17 +26,19 @@ radius = 0.05
 height = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mv1ah"]
-size = Vector3(0.40387, 0.772064, 0.515549)
+size = Vector3(0.40387, 0.946373, 0.515549)
 
 [sub_resource type="Theme" id="Theme_mv1ah"]
 default_font_size = 36
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_mv1ah")
+separate_look_controls = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00346744, 1, 0.00118732)
 shape = SubResource("CapsuleShape3D_ix6vc")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 debug_fill = false
 
 [node name="Pivot" type="Node3D" parent="."]
@@ -69,8 +71,9 @@ skeleton = NodePath("../..")
 [node name="Area3D" type="Area3D" parent="Pivot"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Area3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00766915, 0.311317, 0.90025)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00766915, 0.311317, 0.987404)
 shape = SubResource("BoxShape3D_mv1ah")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="MoneyDisplay" type="Label" parent="."]
 anchors_preset = 1

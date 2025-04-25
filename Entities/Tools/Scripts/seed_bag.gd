@@ -1,7 +1,7 @@
 class_name SeedBag extends Node3D
 
 @export var crop: CropItem
-@onready var seed_bag_colour_material: StandardMaterial3D = load("res://Entities/Tools/Materials/seed_bag.tres")
+@onready var seed_bag_colour_material: StandardMaterial3D = preload("uid://b3u5d2cvwepjw")
 
 func _ready() -> void:
 	if crop:
@@ -14,3 +14,9 @@ func set_seed_bag_color():
 			if c.get_surface_override_material_count() == 3:
 				my_seed_bag_colour_material.albedo_color = crop.seed_bag_color
 				c.set_surface_override_material(0, my_seed_bag_colour_material)
+
+func pick_up(player: Player):
+	return
+
+func on_put_down():
+	queue_free()

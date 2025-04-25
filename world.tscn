@@ -1,13 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://demcs2k6gqw07"]
+[gd_scene load_steps=15 format=3 uid="uid://demcs2k6gqw07"]
 
+[ext_resource type="Script" uid="uid://b11m2foidyslg" path="res://game_loop.gd" id="1_wse8f"]
 [ext_resource type="PackedScene" uid="uid://vnp750s0wgdj" path="res://Entities/Garden/Plot/Models/ground.glb" id="5_036b0"]
 [ext_resource type="Resource" uid="uid://c2yvmgxd8htpf" path="res://Entities/Sellables/Crops/Data/eggplant.tres" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://btdbdaeogm52u" path="res://Entities/Tools/Providers/Models/filled_seed_bag_crate.tscn" id="6_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://do4lmh3g3ea7t" path="res://Entities/Garden/Plot/Models/dirt_patch.tscn" id="7_ioo17"]
-[ext_resource type="PackedScene" uid="uid://c56enw7jxn62v" path="res://Entities/Player/player.tscn" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://c56enw7jxn62v" path="res://Entities/Interactors/Player/Models/player.tscn" id="7_pkg7o"]
 [ext_resource type="Resource" uid="uid://bvu74qpf4eiwb" path="res://Entities/Sellables/Crops/Data/tomato.tres" id="7_wse8f"]
 [ext_resource type="Resource" uid="uid://trjacfyvfkw6" path="res://Entities/Sellables/Crops/Data/carrot.tres" id="8_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://ba0wkke8d4078" path="res://Entities/Tools/Storage/Models/SellBox.tscn" id="8_ioo17"]
+[ext_resource type="PackedScene" uid="uid://dv66u6crys3xk" path="res://Entities/Tools/Models/watering_can.tscn" id="11_ic0uy"]
+[ext_resource type="PackedScene" uid="uid://cpifmtx122rsx" path="res://Structures/StoneFlag/Models/stone_flag.tscn" id="12_2o6r5"]
+[ext_resource type="MeshLibrary" uid="uid://c81ky70sfvl8w" path="res://Structures/Fence/fence_mesh_library.tres" id="12_k3n1d"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gv5m4"]
 points = PackedVector3Array(-64, 0, -64, -64, 0, 64, 64, 0, -64, 64, 0, 64)
@@ -15,14 +19,11 @@ points = PackedVector3Array(-64, 0, -64, -64, 0, 64, 64, 0, -64, 64, 0, 64)
 [sub_resource type="Environment" id="Environment_f3sb7"]
 
 [node name="World" type="Node3D"]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.00174521, 0.748955, -0.662619, 0, 0.66262, 0.748956, 0.999998, 0.00130709, -0.00115641, 0, 0, 0)
-light_color = Color(0.990973, 0.902145, 0.847187, 1)
-shadow_enabled = true
+script = ExtResource("1_wse8f")
+day_length = 120.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 7.31523e-08, -4.78695e-08, -1.33051e-08, 0.413835, 0.910352, 8.64044e-08, 0.910352, -0.413835, 0, 6.12067, -3.15698)
+transform = Transform3D(-1, 7.31523e-08, -4.78695e-08, -1.33051e-08, 0.413835, 0.910352, 8.64044e-08, 0.910352, -0.413835, 0, 8.02886, -5.9525)
 fov = 82.6
 size = 13.928
 
@@ -31,6 +32,7 @@ size = 13.928
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0801697, 0.403351)
 shape = SubResource("ConvexPolygonShape3D_gv5m4")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 debug_fill = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -63,4 +65,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
 [node name="sell_box" parent="." instance=ExtResource("8_ioo17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.0231152, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.292792, 0)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("12_k3n1d")
+cell_size = Vector3(1, 1, 1)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(11, 65530, 2, 11, 65531, 2, 11, 65532, 2, 11, 2, 1, 11, 65533, 2, 11, 65534, 2, 11, 65535, 1, 11, 3, 0, 11, 4, 0, 11, 5, 0, 11, 6, 0, 11, 7, 0, 11, 8, 0, 11, 9, 0, 10, 9, 1441792, 9, 9, 1441792, 8, 9, 1441792, 7, 9, 1441792, 6, 9, 1441792, 5, 9, 1441792, 4, 9, 1441792, 3, 9, 1441792, 2, 9, 1441792, 1, 9, 1441793, 65535, 9, 1048576, 65534, 9, 1048576, 65533, 9, 1048576, 65532, 9, 1048576, 65531, 9, 1048576, 65530, 9, 1048576, 65529, 9, 1048576, 65528, 9, 1048576, 65527, 9, 1048576, 65526, 9, 1048576, 65525, 9, 0, 65525, 8, 0, 65525, 7, 0, 65525, 6, 0, 65525, 5, 0, 65525, 4, 0, 65525, 3, 0, 65525, 2, 1, 65525, 65535, 1, 65525, 65534, 2, 65525, 65533, 2, 65525, 65532, 2, 65525, 65531, 2, 65525, 65530, 2, 11, 65529, 2, 65525, 65529, 2, 65525, 65528, 1441794, 65526, 65528, 1441794, 11, 65528, 1048578, 10, 65528, 1048578, 9, 65528, 1048578, 8, 65528, 1048578, 7, 65528, 1048578, 6, 65528, 1048578, 5, 65528, 1048578, 4, 65528, 1048578, 3, 65528, 1048578, 2, 65528, 1048578, 65527, 65528, 1441794, 65528, 65528, 1441794, 65529, 65528, 1441794, 65530, 65528, 1441794, 65531, 65528, 1441794, 65532, 65528, 1441794, 65533, 65528, 1441794, 65534, 65528, 1441794)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="LightingPivot" type="Node3D" parent="."]
+transform = Transform3D(0.889884, 0.450929, 0.0690618, -0.456068, 0.875935, 0.157293, 0.0104343, -0.171469, 0.985134, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="LightingPivot"]
+transform = Transform3D(0.0213111, -0.996133, -0.0852346, 0.530273, -0.0610122, 0.845629, -0.847559, -0.0632187, 0.526923, 4.87489e-10, 0.0181012, 0)
+light_color = Color(1, 0.534221, 0.275545, 1)
+light_angular_distance = 3.75
+shadow_enabled = true
+shadow_bias = 0.05
+shadow_normal_bias = 1.5
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 23.5
+directional_shadow_pancake_size = 1.0
+
+[node name="watering_can" parent="." instance=ExtResource("11_ic0uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.0832697, -2.56435)
+
+[node name="stone_flag" parent="." instance=ExtResource("12_2o6r5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
