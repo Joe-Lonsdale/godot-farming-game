@@ -18,5 +18,7 @@ func set_seed_bag_color():
 func pick_up(player: Player):
 	return
 
-func on_put_down():
-	queue_free()
+func on_put_down(body_put_down_on: Node3D):
+	if body_put_down_on is SeedBagCrate:
+		queue_free()
+	

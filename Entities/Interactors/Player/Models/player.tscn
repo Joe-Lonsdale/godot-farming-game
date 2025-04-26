@@ -32,6 +32,7 @@ size = Vector3(0.40387, 0.946373, 0.515549)
 default_font_size = 36
 
 [node name="Player" type="CharacterBody3D"]
+wall_min_slide_angle = 0.0872665
 script = ExtResource("1_mv1ah")
 separate_look_controls = false
 

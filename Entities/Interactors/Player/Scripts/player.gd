@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 			currently_interacting_with_listener.is_being_held = true
 			currently_interacting_with_listener.hold_for(delta)
 
-func _unhandled_key_input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		var interactable_body = get_interactable_body()
 		if interactable_body:
@@ -78,7 +78,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		var interactable_body = get_interactable_body()
 		if !interactable_body:
 			return
-		print(interactable_body)
 		if held_item:
 			put_down(interactable_body)
 		else:
@@ -172,8 +171,6 @@ func pick_up(item):
 		if item_node.get_parent():
 			item_node.get_parent().remove_child(item_node)
 		pivot.add_child(item_node)
-		print(item_node.position)
-		print(item_node.global_position)
 		item_node.translate(Vector3(0,1,1))
 	held_item = item_node
 	# if the item we picked up has an on_pick_up() function, trigger it
@@ -187,9 +184,14 @@ func put_down(body_to_put_down_on: Node3D):
 		if !put_down_on_response:
 			return null
 	else: return null
+	pivot.remove_child(held_item)
+	body_to_put_down_on.add_child(held_item)
+	if body_to_put_down_on.has_method("get_aabb"):
+		var aabb: AABB = body_to_put_down_on.get_aabb()
+		held_item.position = Vector3(0,aabb.size.y,0)
 	var tempheld_item = held_item
 	if held_item.has_method("on_put_down"):
-		held_item.on_put_down()
+		held_item.on_put_down(body_to_put_down_on)
 	held_item = null
 	return tempheld_item
 

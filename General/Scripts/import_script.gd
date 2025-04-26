@@ -19,7 +19,6 @@ extends EditorScenePostImport
 # and collisions can directly interact with the script.
 
 func _post_import(scene):
-	var root = scene
 	var mesh = scene.get_children()[0]
 	var body = mesh.get_children()[0]
 	var collision = body.get_children()[0]

@@ -14,5 +14,5 @@ func on_pick_up(player: Player, pick_up_response: Variant):
 	if held_item == self:
 		collision.disabled = true
 		
-func on_put_down():
+func on_put_down(body_put_down_on: Node3D):
 	collision.disabled = false

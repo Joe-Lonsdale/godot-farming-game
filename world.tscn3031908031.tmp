@@ -24,7 +24,7 @@ script = ExtResource("1_wse8f")
 day_length = 120.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 7.31523e-08, -4.78695e-08, -1.33051e-08, 0.413835, 0.910352, 8.64044e-08, 0.910352, -0.413835, 0, 7.94472, -5.94007)
+transform = Transform3D(-1, 7.31523e-08, -4.78695e-08, -1.33051e-08, 0.413835, 0.910352, 8.64044e-08, 0.910352, -0.413835, 0, 8.62657, -6.12653)
 fov = 82.6
 size = 13.928
 script = ExtResource("2_2o6r5")
@@ -70,7 +70,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.292792, 0)
 
 [node name="GridMap" type="GridMap" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024282, -0.0382013, -0.0121937)
 mesh_library = ExtResource("12_k3n1d")
 cell_size = Vector3(1, 1, 1)
 cell_center_x = false
