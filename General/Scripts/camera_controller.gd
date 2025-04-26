@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	player_positions = []
 	for player: Player in players:
 		player_positions.append(player.global_position)
-	if player_positions.all(func(x: Vector3): return !garden_boundary_aabb.has_point(x)):
+	if player_positions.any(func(x: Vector3): return !garden_boundary_aabb.has_point(x)):
 		var max_dist_from_origin := 0.0
 		for pos in player_positions:
 			new_center_pos += pos / player_positions.size()
