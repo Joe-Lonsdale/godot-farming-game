@@ -18,8 +18,6 @@ var currently_interacting_with_listener: InteractionTypeHold = null
 var held_item: Node3D = null
 var smoothed_input_dir: Vector2 = Vector2.ZERO
 	
-
-
 func _ready() -> void:
 	interactable_area.body_entered.connect(_on_body_entered_interactable_area)
 	interactable_area.body_exited.connect(_on_body_exited_interactable_area)
@@ -30,7 +28,8 @@ func _physics_process(delta: float) -> void:
 	smoothed_input_dir = smoothed_input_dir.lerp(input_dir, delta * 10.0)
 	var world_input = transform.basis * Vector3(smoothed_input_dir.x, 0, smoothed_input_dir.y)
 	var horizontal_velocity = Vector3(velocity.x, 0, velocity.z)
-
+	var vertical_velocity = Vector3(0, 0, 0)
+	
 	if is_on_floor():
 		if world_input.length_squared() > 0.0001:
 			horizontal_velocity = world_input.normalized() * walk_speed * smoothed_input_dir.length()
@@ -38,9 +37,11 @@ func _physics_process(delta: float) -> void:
 			horizontal_velocity = horizontal_velocity.lerp(Vector3.ZERO, delta * 7.0)
 	else:
 		horizontal_velocity = horizontal_velocity.lerp(world_input.normalized() * walk_speed * smoothed_input_dir.length(), delta)
+		vertical_velocity = Vector3(0,-9.8, 0)
 
 	velocity.x = horizontal_velocity.x
 	velocity.z = horizontal_velocity.z
+	velocity.y = vertical_velocity.y
 	
 	if separate_look_controls:
 		var look_input = Input.get_vector("look_right", "look_left", "look_down", "look_up")
@@ -100,6 +101,8 @@ func get_interactable_body() -> Node3D:
 
 func _on_body_entered_interactable_area(body: Node3D):
 	if body == self: return
+	if body.has_method("on_player_looking_at"):
+		body.on_player_looking_at(self)
 
 func _on_body_exited_interactable_area(body: Node3D):
 	if body == self: return

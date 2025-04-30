@@ -1,6 +1,6 @@
 class_name StoneFlag extends StaticBody3D
 
-@onready var storage: ToolStorageItem = load("uid://diugoskccihh8").duplicate()
+@onready var storage: Resource = load("uid://diugoskccihh8").duplicate()
 @onready var mesh: MeshInstance3D = $Cube_013
 
 func put_down_on(body: Node3D, player: Player):

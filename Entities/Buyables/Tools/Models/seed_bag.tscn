@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdq4wjslpvgcd"]
+
+[ext_resource type="PackedScene" uid="uid://cr3p5gibveftk" path="res://Entities/Buyables/Tools/Models/seed_bag.glb" id="1_pb1vv"]
+[ext_resource type="Script" uid="uid://dpi5v2hmi6xyq" path="res://Entities/Buyables/Tools/Scripts/seed_bag.gd" id="2_feb5y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etorc"]
+albedo_color = Color(0.237853, 0.752352, 7.70092e-07, 1)
+metallic_specular = 0.4
+roughness = 0.85
+
+[node name="seed_bag" instance=ExtResource("1_pb1vv")]
+script = ExtResource("2_feb5y")
+
+[node name="SeedBag" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_etorc")

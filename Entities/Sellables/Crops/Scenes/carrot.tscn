@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqjjodihx6j7e"]
 
 [ext_resource type="PackedScene" uid="uid://cwpbh8jhhudu4" path="res://Entities/Sellables/Crops/Models/carrot.glb" id="1_346l4"]
-[ext_resource type="Script" uid="uid://2bjmx40lpc75" path="res://Entities/Sellables/sellable.gd" id="2_346l4"]
+[ext_resource type="Script" uid="uid://2bjmx40lpc75" path="res://Entities/Sellables/Sellable.gd" id="2_346l4"]
 
 [node name="carrot" instance=ExtResource("1_346l4")]
 script = ExtResource("2_346l4")

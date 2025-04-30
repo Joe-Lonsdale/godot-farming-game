@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://y886py2fl4rl"]
+
+[node name="fence_left" type="StaticBody3D"]

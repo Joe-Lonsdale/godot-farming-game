@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cajicwng7k08u"]
 
 [ext_resource type="PackedScene" uid="uid://325hulsttic" path="res://Entities/Sellables/Crops/Models/tomato.glb" id="1_exs6f"]
-[ext_resource type="Script" uid="uid://2bjmx40lpc75" path="res://Entities/Sellables/sellable.gd" id="2_exs6f"]
+[ext_resource type="Script" uid="uid://2bjmx40lpc75" path="res://Entities/Sellables/Sellable.gd" id="2_exs6f"]
 
 [node name="tomato" instance=ExtResource("1_exs6f")]
 script = ExtResource("2_exs6f")

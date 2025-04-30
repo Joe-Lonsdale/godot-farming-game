@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://btdbdaeogm52u"]
+
+[ext_resource type="PackedScene" uid="uid://dniq23kw0dvpi" path="res://Entities/Buyables/Placeables/Providers/Models/filled_seed_bag_crate.glb" id="1_7wsyx"]
+[ext_resource type="Script" uid="uid://b5u1nq6necof8" path="res://Entities/Buyables/Placeables/Providers/Scripts/seed_bag_crate.gd" id="2_1aemh"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7wsyx"]
+points = PackedVector3Array(-0.500666, -0.0844, -0.877315, 0.741828, 0.461972, 0.9101, 0.668852, 0.5716, 0.862268, -0.725819, 0.0872, 0.884963, -0.673522, 0.5716, -0.85109, 0.678605, -0.0487, -0.856153, 0.495996, -0.0844, 0.888315, 0.668852, 0.5716, -0.85109, -0.673522, 0.5716, 0.862268, -0.500666, -0.0844, 0.888315, -0.7467, 0.462032, -0.899346, -0.655521, -0.0487, -0.856153, 0.678605, -0.0487, 0.867153, 0.7419, 0.461993, -0.899188, -0.691051, 0.462921, 0.9434, 0.495996, -0.0844, -0.877315, -0.691051, 0.462921, -0.9324, -0.746498, 0.461972, 0.9101, 0.721149, 0.0872, 0.884963, -0.725819, 0.0872, -0.873963, -0.655521, -0.0487, 0.867153, 0.721149, 0.0872, -0.873963, 0.69268, 0.0872, 0.913402, 0.69268, 0.0872, -0.902402, -0.669022, 0.0872, -0.902402, -0.669022, 0.0872, 0.913402, 0.7, 0.458132, 0.922964, 0.7, 0.458132, -0.911964)
+
+[node name="filled_seed_bag_crate" instance=ExtResource("1_7wsyx")]
+script = ExtResource("2_1aemh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("ConvexPolygonShape3D_7wsyx")

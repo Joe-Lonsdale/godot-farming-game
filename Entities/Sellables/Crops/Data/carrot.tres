@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="CropItem" load_steps=4 format=3 uid="uid://trjacfyvfkw6"]
 
 [ext_resource type="PackedScene" uid="uid://dqjjodihx6j7e" path="res://Entities/Sellables/Crops/Scenes/carrot.tscn" id="1_hm0fo"]
-[ext_resource type="Script" uid="uid://041rreevr2db" path="res://Entities/Sellables/Crops/Data/CropItem.gd" id="2_hm0fo"]
-[ext_resource type="PackedScene" uid="uid://cdq4wjslpvgcd" path="res://Entities/Tools/Models/seed_bag.tscn" id="3_hm0fo"]
+[ext_resource type="Script" uid="uid://041rreevr2db" path="res://Entities/Sellables/Crops/CropData.gd" id="2_hm0fo"]
+[ext_resource type="PackedScene" uid="uid://cdq4wjslpvgcd" path="res://Entities/Buyables/Tools/Models/seed_bag.tscn" id="3_hm0fo"]
 
 [resource]
 script = ExtResource("2_hm0fo")

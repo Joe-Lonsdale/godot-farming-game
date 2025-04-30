@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bs063uvoaaoi2"]
 
 [ext_resource type="PackedScene" uid="uid://bl5wp5ahbsypu" path="res://Entities/Sellables/Crops/Models/eggplant.glb" id="1_po72f"]
-[ext_resource type="Script" uid="uid://2bjmx40lpc75" path="res://Entities/Sellables/sellable.gd" id="2_po72f"]
+[ext_resource type="Script" uid="uid://2bjmx40lpc75" path="res://Entities/Sellables/Sellable.gd" id="2_po72f"]
 
 [node name="eggplant" instance=ExtResource("1_po72f")]
 script = ExtResource("2_po72f")

@@ -18,7 +18,6 @@ func _ready() -> void:
 	var meshes = garden_boundary.get_meshes()
 	var corner_1: Vector3 = Vector3.ZERO
 	var corner_2: Vector3 = Vector3.ZERO
-	var x_and_z_coords = []
 	garden_boundary_aabb = AABB(Vector3.ZERO, Vector3.ZERO)
 	for mesh_index in range(meshes.size()):
 		if mesh_index % 2 == 0:
@@ -26,7 +25,6 @@ func _ready() -> void:
 			garden_boundary_aabb = garden_boundary_aabb.expand(Vector3(t.origin.x, t.origin.y, t.origin.z))
 	garden_boundary_aabb = garden_boundary_aabb.expand(Vector3(0.0,-1.0,0.0))
 	garden_boundary_aabb = garden_boundary_aabb.expand(Vector3(0.0,1.0,0.0))
-	print(garden_boundary_aabb)
 
 func _physics_process(delta: float) -> void:
 	var new_zoom = 1.0
@@ -43,8 +41,8 @@ func _physics_process(delta: float) -> void:
 			if abs(pos.z) > max_dist_from_origin:
 				max_dist_from_origin = abs(pos.z)
 		new_zoom = 1.0 + max_dist_from_origin * 0.5
-	zoom = lerp(zoom, new_zoom, delta)
-	center_pos = lerp(center_pos, new_center_pos, delta)
+	zoom = lerp(zoom, new_zoom, delta*0.5)
+	center_pos = lerp(center_pos, new_center_pos, delta*0.5)
 	move_camera_for_zoom_level(center_pos)
 	pass
 

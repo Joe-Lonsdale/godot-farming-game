@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ToolStorageItem" load_steps=3 format=3 uid="uid://diugoskccihh8"]
 
-[ext_resource type="Script" uid="uid://cbgwcl744xv1f" path="res://Entities/Tools/Storage/Data/ToolStorageItem.gd" id="1_7pw7v"]
+[ext_resource type="Script" uid="uid://cbgwcl744xv1f" path="res://Entities/Buyables/Placeables/Storage/StorageEntity.gd" id="1_7pw7v"]
 [ext_resource type="PackedScene" uid="uid://cpifmtx122rsx" path="res://Structures/StoneFlag/Models/stone_flag.tscn" id="1_fatf2"]
 
 [resource]
